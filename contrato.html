@@ -8,15 +8,32 @@
 </head>
 <body>
     <h1>Contrato de ProInvest Latinoamerica</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium soluta aperiam dicta eos, recusandae minima nulla vero vitae, reprehenderit repellat ducimus necessitatibus nesciunt aspernatur consequatur obcaecati corrupti, exercitationem nemo dolores.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae accusantium tenetur culpa iusto nisi sunt asperiores eveniet quae dolorum consequuntur officiis, rem odit deleniti, voluptate praesentium dolorem. Alias, recusandae eaque?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo unde nobis accusantium ex minima mollitia cumque. Pariatur, et optio! Esse vero porro culpa laboriosam quis veritatis reprehenderit consequuntur voluptates natus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt ducimus rem ullam inventore. Quaerat laborum cum debitis officia dolores, sint facilis recusandae porro autem illo eaque, ratione obcaecati placeat quisquam.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, et sunt provident vel accusantium magnam deserunt saepe! Incidunt, sed dolor fuga molestias consequuntur, eligendi numquam praesentium tempore sint, quisquam commodi.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium soluta aperiam dicta eos, recusandae minima
+        nulla vero vitae, reprehenderit repellat ducimus necessitatibus nesciunt aspernatur consequatur obcaecati corrupti,
+        exercitationem nemo dolores.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae accusantium tenetur culpa iusto nisi sunt
+        asperiores eveniet quae dolorum consequuntur officiis, rem odit deleniti, voluptate praesentium dolorem. Alias,
+        recusandae eaque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo unde nobis accusantium ex minima mollitia cumque.
+        Pariatur, et optio! Esse vero porro culpa laboriosam quis veritatis reprehenderit consequuntur voluptates natus!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt ducimus rem ullam inventore. Quaerat laborum cum
+        debitis officia dolores, sint facilis recusandae porro autem illo eaque, ratione obcaecati placeat quisquam.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, et sunt provident vel accusantium magnam deserunt
+        saepe! Incidunt, sed dolor fuga molestias consequuntur, eligendi numquam praesentium tempore sint, quisquam commodi.
+    </p>
     <h3 class="texto-centrado">Firma del contrato</h3>
 
     <div class="texto-centrado">
         <img src="" alt="Firma del contrato" id="firma">
     </div>
+
+    <script>
+        //Metemos aquie el Js para no cargar otro JS tan pequeño
+        //Se usa window.opener que es la ventana padre
+        if (window.opener){
+            document.querySelector('#firma').src = window.opener.obtenerImagen();
+            window.print();
+        }
+    </script>
 </body>
 </html>

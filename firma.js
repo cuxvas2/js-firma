@@ -10,7 +10,7 @@ const ctx = canvas.getContext('2d');
 //Bandera que indica si ya comenzamos a presionar el boton del mouse sin soltarlo
 let modoEscritura = false;
 //Variables para guardar la posicion del cursos
-let xAnterior = o, yAnterior = 0, xActual = 0, yActual = 0;
+let xAnterior = 0, yAnterior = 0, xActual = 0, yActual = 0;
 //variables de estilo
 const COLOR = 'blue';
 const GROSOR = 2;
@@ -22,10 +22,10 @@ form.addEventListener('submit', (e) => {
 
     //Borramos la imagen anterior para poner la nueva a enviar
     const resultadoContenedor = document.querySelector('.firma-resultado-contenedor');
-    const imagenAnterior = document.querySelector('.forma-imagen');
-    if(imagenAnterior){
-        imagenAnterior.remove
-    }
+    const imagenAnterior = document.querySelector('.firma-imagen');
+    if(imagenAnterior)
+        imagenAnterior.remove();
+    
     //Creamos la nueva imagen con lo que tenga el canvas
     const imagenURL = canvas.toDataURL();
     const imagen = document.createElement('img');
@@ -41,9 +41,9 @@ form.addEventListener('submit', (e) => {
 
 //funcion que limpia el canvas poniendole un fondo blanco
 const limpiarPad = () => {
-    ctx.fillStyle = 'while';
+    ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
+};
 limpiarPad();
 
 //Evento click del link "limpiar"
@@ -81,11 +81,11 @@ botonContrato.addEventListener('click', (e) => {
 
 //Obtiene la posicion del cursor REVISAR
 const obtenerPosicionCursor = (e) => {
-    positionX = e.clientX - e.target.getBounfingClientRect().left;
-    positionY = e.clientY - e.target.getBounfingClientRect().top;
+    positionX = e.clientX - e.target.getBoundingClientRect().left;
+    positionY = e.clientY - e.target.getBoundingClientRect().top;
 
     return [positionX, positionY];
-};
+}
 
 const OnClicOToqueIniciado = (e) => {
     modoEscritura = true;
@@ -136,4 +136,4 @@ function OnClicDedoLEvantado(){
 //Al levantar el dedo o el mouse
 ['mouseup', 'touchend'].forEach(nombreEvento => {
     canvas.addEventListener(nombreEvento, OnClicDedoLEvantado, {passive: true});
-})
+});
